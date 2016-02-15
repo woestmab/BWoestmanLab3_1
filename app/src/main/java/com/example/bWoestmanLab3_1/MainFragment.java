@@ -37,6 +37,7 @@ import java.io.InputStreamReader;
  */
 public class MainFragment extends Fragment implements View.OnClickListener
 {
+    public static final String TAG = "*****DEBUG";
     private String filename = "MySampleFile.txt";
     private String filepath = "MyFileStorage";
     File myInternalFile;
@@ -98,6 +99,10 @@ public class MainFragment extends Fragment implements View.OnClickListener
                 (Button) getView().findViewById(R.id.getInternalStorage);
         readFromInternalStorage.setOnClickListener(this);
 
+        Button deleteFromInternalStorage =
+                (Button) getView().findViewById(R.id.deleteInternalStorage);
+        deleteFromInternalStorage.setOnClickListener(this);
+
         Button saveToExternalStorage =
                 (Button) getView().findViewById(R.id.saveExternalStorage);
         saveToExternalStorage.setOnClickListener(this);
@@ -105,6 +110,10 @@ public class MainFragment extends Fragment implements View.OnClickListener
         Button readFromExternalStorage =
                 (Button) getView().findViewById(R.id.getExternalStorage);
         readFromExternalStorage.setOnClickListener(this);
+
+        Button deleteFromExternalStorage =
+                (Button) getView().findViewById(R.id.deleteExternalStorage);
+        deleteFromExternalStorage.setOnClickListener(this);
 
         //check if external storage is available and not read only
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly())
@@ -193,6 +202,12 @@ public class MainFragment extends Fragment implements View.OnClickListener
                 responseText.setText("MySampleFile.txt data retrieved from Internal Storage...");
                 break;
 
+            case R.id.deleteInternalStorage:
+                myInternalFile.delete();
+
+                responseText.setText("MySampleFile.txt data deleted from Internal Storage...");
+                break;
+
             case R.id.saveExternalStorage:
                 try
                 {
@@ -227,6 +242,14 @@ public class MainFragment extends Fragment implements View.OnClickListener
                 myInputText.setText(myData);
                 responseText.setText("MySampleFile.txt data retrieved from Internal Storage...");
                 break;
+
+            case R.id.deleteExternalStorage:
+                myExternalFile.delete();
+
+                responseText.setText("MySampleFile.txt data deleted from Internal Storage...");
+                break;
+
+            default: break;
         }
     }
 

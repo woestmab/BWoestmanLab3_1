@@ -28,6 +28,11 @@
             android:layout_height="wrap_content"
             android:text="Display from Internal Storage" />
 
+    <Button android:id="@+id/deleteInternalStorage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete from Internal Storage" />
+
     <Button android:id="@+id/saveExternalStorage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +42,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Display from External Storage" />
+
+    <Button android:id="@+id/deleteExternalStorage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete from External Storage" />
 
     <TextView android:id="@+id/responseText"
               android:layout_width="wrap_content"
