@@ -1,4 +1,4 @@
-package com.example.usernameLab3_1;
+package com.example.bWoestmanLab3_1;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
